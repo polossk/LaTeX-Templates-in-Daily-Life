@@ -11,8 +11,8 @@
 |              | 文档类型 | 格式控制              | 字号控制                 |
 | ------------ | -------- | --------------------- | ------------------------ |
 | Assignment   | article  | `article-setting.tex` | 支持自定义字号           |
-| Code         | article  | `note-setting.tex`    | 原生命令                 |
-| Note         | article  | `code-setting.tex`    | 原生命令                 |
+| Code         | article  | `code-setting.tex`    | 原生命令                 |
+| Note         | article  | `note-setting.tex`    | 原生命令                 |
 | Presentation | beamer   | `beamer-setting.tex`  | 默认字号，支持自定义字号 |
 
 * 文档字体选用 Adobe Fonts。因为相比较于普通的自带的字体（宋体、黑体、仿宋、楷体），Adobe Fonts 更美观一些
