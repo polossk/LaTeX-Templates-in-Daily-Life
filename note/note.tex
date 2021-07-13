@@ -1,0 +1,194 @@
+\documentclass{article}
+\input{note-setting}
+%------------------------------------------------------------------------------%
+\title{张量基础}
+\author{polossk}
+\date{\today}
+\newcommand\artversion{1.0}
+%------------------------------------------------------------------------------%
+\begin{document}
+%------------------------------------------------------------------------------%
+\maketitle
+\small\tableofcontents
+\thispagestyle{fancy}
+\renewcommand{\baselinestretch}{1.25}
+\fSong\normalsize
+%------------------------------------------------------------------------------%
+\nocite{MathSymbolsinLaTeXbypolossk}
+
+%------------------------------------------------------------------------------%
+\section{符号说明}
+%------------------------------------------------------------------------------%
+为不失一般性，一般的用如下记号表示标量、向量、张量。
+
+\begin{longtable}[]{@{}llll@{}}
+    \toprule
+    名称                    & 符号                  & \LaTeX 代码                                                            & 示例      \\
+    \midrule
+    标量                    & 小写字母              & \lstinline`a`, \lstinline`b`, \lstinline`c` & $a$, $b$,
+    $c$                                                                                                                                  \\
+    向量                    & \textbf{加粗}小写字母 &
+    \lstinline`\mva`,
+    \lstinline`\mvb`,
+    \lstinline`\mvc`  & $\mva$,
+    $\mvb$, $\mvc$                                                                                                                       \\
+    向量分量                & 小写字母加下标        & \lstinline`a_i`, \lstinline`b_j`, \lstinline`c_k`
+                            & $a_i$, $b_j$, $c_k$                                                                                        \\
+    张量                    & \textbf{加粗}大写字母 &
+    \lstinline`\mma`,
+    \lstinline`\mmb`,
+    \lstinline`\mmc` & ${\bm A}$,
+    ${\bm B}$, ${\bm C}$                                                                                                                 \\
+    张量分量                & 大写字母加下标        & \lstinline`A_{ij}`, \lstinline`B_{ijk}`,
+    \lstinline`C_{ijkl}` & $A_{ij}$, $B_{ijk}$,
+    $C_{ijkl}$                                                                                                                           \\
+    \bottomrule
+\end{longtable}
+%------------------------------------------------------------------------------%
+
+
+%------------------------------------------------------------------------------%
+\subsection{爱因斯坦记号}
+%------------------------------------------------------------------------------%
+一般的，如果没有额外说明，在用下标表示的张量计算中，将采用爱因斯坦求和约定（Einstein
+summation convention），或者也被称为爱因斯坦记号（Einstein
+Notation）。举例说明，如向量的点积（内积），其张量（向量）表示为
+$c = \mva \cdot \mvb$，而使用爱因斯坦记号可以表示为
+$c = a_i b_i$。这是由于有如下约定
+
+\[a_i b_i = \sum_i a_i b_i = \mva \cdot \mvb\]
+这里的下标 $i$ 被称作哑指标，表示对下标 $i$
+进行缩并。在爱因斯坦记号的帮助下，许多张量计算可以更简洁的表示。
+
+这里引入两个常用记号，克罗内克 $\delta$ 函数（Kronecker
+delta），以及利威尔-奇维塔符号（Levi-Civita symbol）。
+%------------------------------------------------------------------------------%
+
+
+%------------------------------------------------------------------------------%
+\subsection{克罗内克 $\delta$ 函数（Kronecker delta）}
+%------------------------------------------------------------------------------%
+克罗内克 $\delta$ 函数一般被定义为一个二元函数
+$\delta_{ij}$，其自变量一般为两个整数，当且仅当两个整数恰好相同时，其取值为
+1，否则为 0。即
+
+\[\delta_{ij} = \begin{cases}
+        1, & \text{if}\ i = j, \\
+        0, & \text{otherwise.}
+    \end{cases}\]
+%------------------------------------------------------------------------------%
+
+
+%------------------------------------------------------------------------------%
+\subsection{利威尔-奇维塔符号（Levi-Civita symbol）}
+%------------------------------------------------------------------------------%
+利威尔-奇维塔符号 $\epsilon_{a_1, a_2, \cdots, a_n}$
+由其每一个下标指标 $a_1, a_2, \cdots, a_n$
+的取值所构成的排列的奇偶性来确定。这里直接给出一些结论：
+
+在二维中，符号 $\epsilon_{ij}$ 的定义如下所示
+
+\[\epsilon_{ij} = \begin{cases}
+        +1, & \text{if}\ (i, j) = (1, 2), \\
+        -1, & \text{if}\ (i, j) = (2, 1), \\
+        0,  & \text{otherwise.}
+    \end{cases}\]
+此时，$\epsilon_{ij}$ 恰好为一个大小为 $2\times2$ 的反对称矩阵
+
+\[
+    \begin{pmatrix}
+        \epsilon_{11} & \epsilon_{12} \\ \epsilon_{21} & \epsilon_{22}
+    \end{pmatrix}
+    = \begin{pmatrix}
+        0 & 1 \\ -1 & 0
+    \end{pmatrix}
+\]
+一般的，利威尔-奇维塔符号多见于 3 维或更高的维度当中。以三维的符号
+$\epsilon_{ijk}$ 举例，其定义与二维类似
+
+\[\epsilon_{ijk} = \begin{cases}
+        +1, & \text{if}\ (i, j, k) \in \bigl\{(1, 2, 3), (2, 3, 1), (3, 1, 2)\bigr\}, \\
+        -1, & \text{if}\ (i, j, k) \in \bigl\{(3, 2, 1), (1, 3, 2), (2, 1, 3)\bigr\}, \\
+        0,  & \text{otherwise.}
+    \end{cases}\]
+即其定义是通过序列 $(i, j, k)$
+是奇排列还是偶排列定义其取值。一般规定，自然排列 $(1, 2, 3)$ 的取值为
+1；当有任意两个指标相同时，其符号为 0。对于序列 $(i, j, k)$
+如果可以通过奇数次交换变换成自然排列
+$(1, 2, 3)$，则称其为奇排列，其符号取值为
+-1；否则为偶排列，其符号取值与自然排列保持一致，为
+1。如果将序列扩展到更高的维度，则可以类似的定义符号，这里不再额外赘述。
+%------------------------------------------------------------------------------%
+
+
+%------------------------------------------------------------------------------%
+\section{常见运算表}
+%------------------------------------------------------------------------------%
+下面列举部分简单二元运算的张量写法与爱因斯坦记号写法。为不失一般性，下表中的向量
+$\mva \in {\mathbb R}^{n}$ 也可以用列向量
+$\mva \in {\mathbb R}^{n \times 1}$
+来表示。同时如没有额外说明，张量一般为二阶张量
+${\bm A} \in {\mathbb R}^{n \times m}$，同时这里的乘法与指标缩并均满足其定义规定。
+
+\begin{longtable}[]{@{}lll@{}}
+    \toprule
+    运算                                & 张量写法                                      & 爱因斯坦记号写法\tabularnewline
+    \midrule
+    \endhead
+    同阶向量/张量加减                   &
+    ${\bm C} = {\bm A} \pm {\bm B}$     &
+    $c_{ij} = a_{ij} \pm b_{ij}$\tabularnewline
+    标量与向量/张量相乘                 & ${\bm B} = k {\bm A}$                         &
+    $b_{ij} = k a_{ij}$\tabularnewline
+    对应项相乘（Hadamard product）      &
+    ${\bm C} = {\bm A} \circ {\bm B}$   &
+    $c_{ij} = a_{ij} b_{ij}$\tabularnewline
+    向量点积（内积）                    &
+    $c = \mva \cdot \mvb = \mva^{\text T} \mvb$
+                                        & $c = a_i b_i$\tabularnewline
+    向量叉积（向量积）                  &
+    $\mvc = \mva \times \mvb$           &
+    $c_i = \epsilon_{ijk} a_j b_k$\tabularnewline
+    向量外积（张量积）                  &
+    ${\bm C} = \mva \otimes \mvb= \mva \mvb^{\text T}$
+                                        & $c_{ij} = a_i b_j$\tabularnewline
+    矩阵转置                            & ${\bm C} = {\bm A}^{\text T}$                 &
+    $c_{ji} = a_{ij}$\tabularnewline
+    矩阵的迹                            & $c=\mathrm{tr} {\bm A}$                       &
+    $c = a_{ii}$\tabularnewline
+    矩阵乘法                            & ${\bm C} = {\bm A} {\bm B}$                   &
+    $c_{ij} = a_{ik} b_{kj}$\tabularnewline
+    Frobenius inner product             &
+    ${\bm C} = {\bm A} : {\bm B}=\langle{\bm A}, {\bm B}\rangle_F = \mathrm{tr}\left( {\bm A}^{\text H} {\bm B} \right)$
+                                        & $c = \overline{a_{ij}} b_{ij}$\tabularnewline
+    Kronecker product                   &
+    ${\bm C} = {\bm A} \otimes {\bm B}$ &
+    $c_{ijkl} = a_{ij} b_{kl}$\tabularnewline
+    \bottomrule
+\end{longtable}
+%------------------------------------------------------------------------------%
+
+\section{部分公式推导}
+
+\subsection{向量相关}
+
+\paragraph{$(a\cdot b)c$}
+
+\[
+    \begin{aligned}
+        {\bm d}          & = (\mva \cdot \mvb) \mvc = \mva^{\text T} \mvb \mvc              \\
+        \implies d_j     & = (a_i b_i) c_j = a_i (b_i c_j) = c_j b_i a_i = (c_j b_i) a_{i1} \\
+        \implies {\bm d} & = (\mvb \otimes \mvc)^{\text T} \mva
+    \end{aligned}
+\]
+
+
+
+
+%------------------------------------------------------------------------------%
+
+\phantomsection
+\addcontentsline{toc}{section}{参考文献}
+\bibliographystyle{nputhesis}
+\bibliography{reference}
+\end{document}

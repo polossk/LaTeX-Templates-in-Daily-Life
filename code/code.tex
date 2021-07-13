@@ -1,0 +1,32 @@
+\documentclass{article}
+\input{code-setting}
+%------------------------------------------------------------------------------%
+\title{\textbf{Hello World}
+\textit{pre-release}
+\texttt{0.1} \\
+\textit{commit id:}
+\texttt{@0000000}}
+\author{polossk}
+\date{\today}
+\newcommand\artversion{1.0}
+%------------------------------------------------------------------------------%
+\begin{document}
+%------------------------------------------------------------------------------%
+\maketitle
+\small\tableofcontents
+\thispagestyle{fancy}
+\renewcommand{\baselinestretch}{1.25}
+\fSong\normalsize
+%------------------------------------------------------------------------------%
+
+\section{hello.cpp}
+\lstinputlisting[language={C++}]{./hello.cpp}
+\section{hello.py}
+\lstinputlisting[language={Python}]{./hello.py}
+\section{hello.hs}
+\lstinputlisting[language={Haskell}]{./hello.hs}
+\section{hello.cpp}
+\lstinputlisting[language={Java}]{./hello.java}
+
+
+\end{document}

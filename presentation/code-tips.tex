@@ -1,0 +1,33 @@
+\defverbatim[colored]\codeTipHelloWorld{
+\begin{lstlisting}[
+	language={C++},
+	emph = {std},
+	emphstyle = {\color{green}}
+]
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    cout << "Hello World!" << endl;
+    return 0;
+}
+\end{lstlisting}
+}
+
+
+\defverbatim[colored]\codeTipHaskell{
+\begin{lstlisting}[
+	language={Haskell}
+]
+qsort :: (Ord a) => [a] -> [a]
+qsort [] = []
+qsort (x:xs) =
+    let leq = [a | a <- xs, a <= x]
+        gt = [a | a <- xs, a > x]
+        in qsort leq ++ [x] ++ qsort gt
+\end{lstlisting}
+}
+
+\endinput
+% 这是所用到的代码片段，不能单独编译。

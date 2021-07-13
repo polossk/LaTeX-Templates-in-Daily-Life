@@ -1,0 +1,263 @@
+%!Tex Program = xelatex
+%------------------------------------------------------------------------------%
+% Compile this document, by following instructures below:
+% > xelatex assignment.tex
+% > xelatex assignment.tex
+%------------------------------------------------------------------------------%
+\documentclass[no-math, compress]{beamer}
+%------------------------------------------------------------------------------%
+% Add "handout" flag to export a handout version
+% \documentclass[no-math, handout, compress]{beamer}
+%------------------------------------------------------------------------------%
+
+\mode<presentation>
+
+% beamer 导言区设置
+\input{beamer-setting}
+
+% plugins
+\usepackage{math-symbols}
+
+% emph
+\newcommand\blueText[1]{\textcolor{blue}{\bf #1}}
+\newcommand\greenText[1]{\textcolor{green}{\bf #1}}
+\newcommand\redText[1]{\textcolor{red}{\bf #1}}
+\newcommand\violetText[1]{\textcolor{violet}{\bf #1}}
+
+% 指定相关数据文件路径
+\graphicspath{{images/}{animations/}} % 图片与动画文件
+\addbibresource{reference.bib} % BibTeX 数据文件及位置
+
+\begin{document}
+
+% 添加所有代码片段
+\input{code-tips}
+
+\title{主标题}
+\subtitle{副标题}
+\institute{单位名称}
+\author{报告人}
+\date{\today}
+\subject{}
+\keywords{}
+
+\begin{frame}
+    \titlepage
+    {\tiny 其他应当在首页出现的内容}
+\end{frame}
+
+
+\begin{frame}{报告内容}
+    \tableofcontents
+\end{frame}
+
+
+\section{列表环境}
+
+
+\begin{frame}{列表环境}{依次高亮的列表}
+    \begin{itemize}[<+-| alert@+>]
+        \item 内容测试~依次高亮的列表
+        \item 内容测试~依次高亮的列表
+        \item 内容测试~依次高亮的列表
+        \item 内容测试~依次高亮的列表
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{列表环境}{普通列表}
+    \begin{itemize}
+        \item 内容测试~普通列表
+        \item 内容测试~普通列表
+        \item 内容测试~普通列表
+        \item 内容测试~普通列表
+    \end{itemize}
+\end{frame}
+
+
+\section{图片环境}
+
+
+\begin{frame}{图片环境}{插入图片}
+    \begin{center}
+        \includegraphics[height=0.6\textheight]{image01}
+    \end{center}
+\end{frame}
+
+
+\begin{frame}{图片环境}{插入图片并且添加标题}
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.6\textheight]{image01}
+        \caption{测试插图并标题}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}{图片环境}{插入图片并且添加描述}
+    \begin{figure}
+        \centering
+        \begin{minipage}[t]{0.4\textwidth}
+            \centering
+            这里有大段大段的描述描述，省略不写。
+            这里有大段大段的描述描述，省略不写。
+            这里有大段大段的描述描述，省略不写。
+            这里有大段大段的描述描述，省略不写。
+        \end{minipage}
+        \qquad
+        \begin{minipage}[t]{0.4\textwidth}
+            \centering\vspace{0pt}
+            \includegraphics[width=0.8\textwidth]{image01}
+        \end{minipage}
+        \caption{测试插图并描述}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}{图片环境}{插入图片并且添加描述}
+    \begin{figure}
+        \centering
+        \begin{minipage}[t]{0.4\textwidth}
+            \centering\vspace{0pt}
+            \includegraphics[width=0.8\textwidth]{image01}
+        \end{minipage}
+        \qquad
+        \begin{minipage}[t]{0.4\textwidth}
+            \centering
+            这里有大段大段的描述描述，省略不写。
+            这里有大段大段的描述描述，省略不写。
+            这里有大段大段的描述描述，省略不写。
+            这里有大段大段的描述描述，省略不写。
+        \end{minipage}
+        \caption{测试插图并描述}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}{图片环境}{插入两张图片并分别标题}
+    \begin{figure}
+        \centering
+        \begin{minipage}[t]{0.4\textwidth}
+            \centering
+            \includegraphics[width=0.8\textwidth]{thumbnail-image01}
+            \caption{左图}
+        \end{minipage}
+        \qquad
+        \begin{minipage}[t]{0.4\textwidth}
+            \centering
+            \includegraphics[width=0.8\textwidth]{image01}
+            \caption{右图}
+        \end{minipage}
+        \caption{插入两张图片并分别标题}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}{图片环境}{插入两张图片并按顶部对齐}
+    \vspace{-1em}
+    \begin{figure}
+        \centering
+        \begin{minipage}[t]{0.4\textwidth}
+            \centering\vspace{0pt}
+            \includegraphics[width=0.8\textwidth]{thumbnail-image01}
+            \caption{左图}
+        \end{minipage}
+        \qquad
+        \begin{minipage}[t]{0.4\textwidth}
+            \centering\vspace{0pt}
+            \includegraphics[width=0.8\textwidth]{image01}
+            \caption{右图}
+        \end{minipage}
+        \caption{插入两张图片并按顶部对齐}
+    \end{figure}
+\end{frame}
+
+
+\section{参考文献}
+
+
+\begin{frame}{参考文献}{通过脚注方式引用}
+    \begin{itemize}[]
+        \item 完全展示\footfullcite{bourdin2000numerical}
+        \item 简要展示\footcite{bourdin2000numerical}
+        \item 完全展示\footfullcite{MathSymbolsinLaTeXbypolossk}
+        \item 简要展示\footcite{MathSymbolsinLaTeXbypolossk}
+    \end{itemize}
+\end{frame}
+
+
+\section{其他组件}
+
+
+\subsection{插入标准三线表}
+
+
+\begin{frame}{其他组件}{插入标准三线表}
+    \begin{table}
+        \centering
+        \begin{tabular}{ccc}
+            \toprule
+            Parameters & 5            & 7            \\
+            \midrule
+            Score A    & 5.188528e-04 & 5.219664e-04 \\
+            Score B    & 5.284482e-02 & 4.869455e-02 \\
+            \bottomrule
+        \end{tabular}
+        \caption{标准三线表}
+    \end{table}
+\end{frame}
+
+
+\subsection{插入动画}
+
+
+\begin{frame}{其他组件}{插入动画}
+    \begin{center}
+        \animategraphics[height=0.5\textheight, autoplay, loop]{10}{animation_wangjz_}{00}{51}
+    \end{center}
+\end{frame}
+
+
+\subsection{强调文字}
+
+
+\begin{frame}{其他组件}{强调文字}
+    \begin{itemize}
+        \item 内容测试~\blueText{强调文字}环境
+        \item 内容测试~\greenText{强调文字}环境
+        \item 内容测试~\redText{强调文字}环境
+        \item 内容测试~\violetText{强调文字}环境
+    \end{itemize}
+\end{frame}
+
+
+\subsection{插入代码}
+
+
+\begin{frame}[fragile]{其他组件}{插入代码}
+    C++ 程序代码 \\
+    \begin{center}
+        \codeTipHelloWorld
+    \end{center}
+\end{frame}
+
+
+\begin{frame}[fragile]{其他组件}{插入代码}
+    Haskell 程序代码 \\
+    \begin{center}
+        \codeTipHaskell
+    \end{center}
+\end{frame}
+
+
+\section{Summary}
+
+
+\begin{frame}
+    \begin{center}
+        {\Huge \it 谢谢大家!}
+    \end{center}
+\end{frame}
+
+
+\end{document}

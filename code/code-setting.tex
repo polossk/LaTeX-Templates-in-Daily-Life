@@ -1,0 +1,188 @@
+% pdf 设置区
+%---------------------------------纸张大小设置---------------------------------%
+\usepackage{geometry}
+\geometry{a4paper,left=1.91cm,right=1.91cm,top=2.05cm,bottom=2.05cm}
+%------------------------------------------------------------------------------%
+
+
+%----------------------------------必要库支持----------------------------------%
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{layouts}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{clrscode}
+\usepackage{gensymb}
+%------------------------------------------------------------------------------%
+
+
+%--------------------------------添加书签超链接--------------------------------%
+\usepackage[unicode=true,colorlinks=false,pdfborder={0 0 0}]{hyperref}
+% 在此处修改打开文件操作
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    bookmarksopen=true,     % expanded all bookmark?
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=true,      % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdfnewwindow=true,      % links in new PDF window
+}
+% 在此处添加文章基础信息
+\hypersetup{
+    pdftitle={},
+    pdfauthor={polossk},
+    pdfsubject={},
+    pdfcreator={XeLaTeX},
+    pdfproducer={XeLaTeX},
+    pdfkeywords={},
+}
+%------------------------------------------------------------------------------%
+
+
+%---------------------------------设置字体大小---------------------------------%
+\usepackage{type1cm}
+% 维持默认行距与字号大小设置
+%------------------------------------------------------------------------------%
+
+
+%---------------------------------设置中文字体---------------------------------%
+\usepackage{fontspec}
+\usepackage[SlantFont,BoldFont,CJKchecksingle]{xeCJK}
+\usepackage{CJKnumb}
+% 使用 Adobe 字体
+\newcommand\adobeSog{Adobe Song Std}
+\newcommand\adobeHei{Adobe Heiti Std}
+\newcommand\adobeKai{Adobe Kaiti Std}
+\newcommand\adobeFag{Adobe Fangsong Std}
+\newcommand\codeFont{Consolas}
+% 设置字体
+\defaultfontfeatures{Mapping=tex-text}
+\setCJKmainfont[ItalicFont=\adobeKai, BoldFont=\adobeHei]{\adobeSog}
+\setCJKsansfont[ItalicFont=\adobeKai, BoldFont=\adobeHei]{\adobeSog}
+\setCJKmonofont{\codeFont}
+\setmonofont{\codeFont}
+% 设置字体族
+\setCJKfamilyfont{song}{\adobeSog}      % 宋体
+\setCJKfamilyfont{hei}{\adobeHei}       % 黑体
+\setCJKfamilyfont{kai}{\adobeKai}       % 楷体
+\setCJKfamilyfont{fang}{\adobeFag}      % 仿宋体
+% 用于页眉学校名，特殊字体，powerby https://github.com/ecomfe/fonteditor
+\setCJKfamilyfont{nwpu}{nwpuname}
+% 新建字体命令，统一前缀f(a.k.a font)
+\newcommand{\fSong}{\CJKfamily{song}}
+\newcommand{\fHei}{\CJKfamily{hei}}
+\newcommand{\fFang}{\CJKfamily{fang}}
+\newcommand{\fKai}{\CJKfamily{kai}}
+\newcommand{\fNWPU}{\CJKfamily{nwpu}}
+%------------------------------------------------------------------------------%
+
+
+%------------------------------添加插图与表格控制------------------------------%
+\usepackage{graphicx}
+\usepackage[font=small,labelsep=quad]{caption}
+\usepackage{wrapfig}
+\usepackage{multirow,makecell}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{setspace}
+\captionsetup[table]{labelfont=bf,textfont=bf}
+\renewcommand\arraystretch{1.1} % 表格行距
+%------------------------------------------------------------------------------%
+
+
+%---------------------------------添加列表控制---------------------------------%
+\usepackage{enumerate}
+\usepackage{enumitem}
+%------------------------------------------------------------------------------%
+
+
+%---------------------------------设置引用格式---------------------------------%
+\renewcommand\figureautorefname{图}
+\renewcommand\tableautorefname{表}
+\renewcommand\equationautorefname{式}
+\newcommand\myreference[1]{[\ref{#1}]}
+\newcommand\eqrefe[1]{式(\ref{#1})}
+% 增加 \ucite 命令使显示的引用为上标形式
+\newcommand{\ucite}[1]{$^{\mbox{\scriptsize \cite{#1}}}$}
+\renewcommand{\thefigure}{\thesection-\arabic{figure}}
+\renewcommand{\thetable}{\thesection-\arabic{table}}
+%------------------------------------------------------------------------------%
+
+
+%--------------------------------设置定理类环境--------------------------------%
+\usepackage[amsthm,thmmarks]{ntheorem}
+\newtheorem{thm}{定理}
+\newtheorem{prop}[thm]{命题}
+\newtheorem{lemma}{引理}
+\newtheorem{definition}{定义}
+\newtheorem*{solution}{解}
+\newtheorem*{solproof}{证明}
+\renewcommand{\qed}{\ifmmode\qed\else\hfill\proofSymbol\fi}
+%------------------------------------------------------------------------------%
+
+
+%--------------------------设置中文段落缩进与正文版式--------------------------%
+\XeTeXlinebreaklocale "zh"                      % 使用中文的换行风格
+\XeTeXlinebreakskip = 0pt plus 1pt              % 调整换行逻辑的弹性大小
+\usepackage{indentfirst}                        % 段首空格设置
+\setlength{\parindent}{2em}                     % 段首空格长度
+% \setlength{\parskip}{3pt plus 1pt minus 1pt}    % 段落间距
+\renewcommand{\baselinestretch}{1.25}           % 行距
+%------------------------------------------------------------------------------%
+
+%---------------------------------设置页眉页脚---------------------------------%
+\usepackage{fancyhdr}
+\usepackage{fancyref}
+\pagestyle{fancy}
+\chead{{\fNWPU 西北工业大学}}
+\lhead{}
+\rhead{}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headwidth}{\textwidth}
+\renewcommand{\footrulewidth}{0pt}
+%------------------------------------------------------------------------------%
+
+
+%-------------------------------数学特殊符号控制-------------------------------%
+\usepackage{math-symbols}
+\numberwithin{equation}{section}
+\renewcommand\theequation{\thesection.\arabic{equation}}
+%------------------------------------------------------------------------------%
+
+
+%----------------------------------添加代码控制--------------------------------%
+\usepackage{listings}
+\lstset{
+    basicstyle=\footnotesize\ttfamily,
+    numbers=left,
+    numberstyle=\tiny,
+    numbersep=5pt,
+    tabsize=4,
+    extendedchars=true,
+    breaklines=true,
+    identifierstyle=\color[HTML]{984ea3}\bfseries,
+    keywordstyle=\color[HTML]{377eb8}\bfseries,
+    numberstyle=\color[HTML]{e41a1c},
+    commentstyle=\color[HTML]{4daf4a}\bfseries,
+    stringstyle=\color[HTML]{ff7f00}\ttfamily\bfseries,
+    rulesepcolor=\color[HTML]{cccccc},
+    showspaces=false,
+    showtabs=false,
+    frame=shadowbox,
+    framexrightmargin=5pt,
+    framexbottommargin=4pt,
+    showstringspaces=false,
+    escapeinside=`', % 逃逸字符(1左面的键)，用于显示中文
+}
+\renewcommand{\lstlistingname}{CODE}
+\lstloadlanguages{% Check Dokumentation for further languages, page 12
+    Pascal, C++, Java, Ruby, Python, Matlab, R, Haskell, Mathematica
+}
+%------------------------------------------------------------------------------%
+
+\endinput
+%这是简单的 article 的导言区设置，不能单独编译。
