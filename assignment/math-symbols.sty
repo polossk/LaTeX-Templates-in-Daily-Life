@@ -233,7 +233,8 @@
 %------------------------------------------------------------------------------%
 %-Useful-Operators-------------------------------------------------------------%
 %------------------------------------------------------------------------------%
-\DeclareMathOperator\diff{d\!}                             % operator diff
+\newcommand\diff{{\mathop{}\!\mathrm{d}}}                  % operator diff
+% \DeclareMathOperator\diff{d\!}                             % operator diff
 \DeclareMathOperator\Diff{D}                               % operator Diff
 \DeclareMathOperator\Expect{E}                             % operator Expect
 \DeclareMathOperator\diag{diag}                            % operator diag
@@ -252,7 +253,8 @@
 \DeclareMathOperator*{\dist}{dist}                         % operator dist
 \DeclareMathOperator\rot{rot}                              % operator rot
 \DeclareMathOperator\curl{curl}                            % operator curl
-\DeclareMathOperator\divergence{div}                       % operator div
+\newcommand\divergence{{\mathop{\mathrm{div}}}}                              % operator div
+% \DeclareMathOperator\divergence{div}                       % operator div
 %------------------------------------------------------------------------------%
 %-Useful-Functions-------------------------------------------------------------%
 %------------------------------------------------------------------------------%
