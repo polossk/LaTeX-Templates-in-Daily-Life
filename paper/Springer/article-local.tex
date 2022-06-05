@@ -1,0 +1,162 @@
+%!TEX TS-program = xelatex
+\documentclass[pdflatex, a4paper, default]{sn-jnl}
+% \documentclass[referee]{sn-jnl}
+%------------------------------------------------------------------------------%
+% To get PDF file: xelatex -> bibtex -> xelatex -> xelatex
+%------------------------------------------------------------------------------%
+\jyear{2022}
+
+%------------------------------------------------------------------------------%
+% Springer Default LaTeX Setting, replace it when submitting your paper
+\input{default-sn-journal.tex}
+\usepackage{lineno}
+%------------------------------------------------------------------------------%
+
+
+% Math Symbols
+\usepackage{math-symbols}
+\usepackage{cases}
+
+\newcommand\artversion{1.0} % easy to track and folk
+\newcommand{\R}[1]{\textcolor{red}{#1}} % text in red
+\newcommand{\RU}[1]{\textcolor{red}{#1}} %
+\newcommand{\blu}[1]{\textcolor{blue}{#1}} %
+\newcommand{\dto}[1]{\textcolor{OliveGreen}{#1}} %
+% added by ditho
+\newcommand\eg{{e.g.}\ }
+\newcommand\etal{{et al.}\ }
+\newcommand\ie{{i.e.}}
+\newcommand{\dbquote}[1]{\textquotedblleft #1\textquotedblright}
+\newcommand{\sgquote}[1]{\textquoteleft #1\textquoteright}
+\graphicspath{{./images/}}
+% diff operator
+\newcommand\dx{{\diff x}}
+\newcommand\dxp{{\diff x'}}
+\newcommand\dVmvx{{\diff V_{\mvx}}}
+\newcommand\dVmvxp{{\diff V_{\mvx'}}}
+% trivial PD
+\newcommand\horizondeltax{{\mathcal H_{\delta_0}(x)}}
+\newcommand\horizondeltaxp{{\mathcal H_{\delta_0}(x')}}
+\newcommand\horizondeltamvx{{\mathcal H_{\delta_0}(\mvx)}}
+\newcommand\horizondeltamvxp{{\mathcal H_{\delta_0}(\mvx')}}
+% Dual-horizon PD
+\newcommand\horizonx{{\mathcal H_{x}}}
+\newcommand\horizonmvx{{\mathcal H_{\mvx}}}
+\newcommand\horizonmvxp{{\mathcal H_{\mvx'}}}
+\newcommand\Dualhorizonx{{\mathcal H'_{x}}}
+\newcommand\Dualhorizonmvx{{\mathcal H'_{\mvx}}}
+\newcommand\Dualhorizonmvxp{{\mathcal H'_{\mvx'}}}
+% boundary
+\newcommand\Bdelta{{\mathrm B_\delta}}
+\newcommand\Idelta{{\mathrm I_\delta}}
+% more readable
+\newcommand\Hdeltax{\horizondeltax}
+\newcommand\Hdeltaxp{\horizondeltaxp}
+\newcommand\Hdeltamvx{\horizondeltamvx}
+\newcommand\Hdeltamvxp{\horizondeltamvxp}
+\newcommand\Hx{\horizonx}
+\newcommand\Hmvx{\horizonmvx}
+\newcommand\Hmvxp{\horizonmvxp}
+\newcommand\DHx{\Dualhorizonx}
+\newcommand\DHmvx{\Dualhorizonmvx}
+\newcommand\DHmvxp{\Dualhorizonmvxp}
+
+%--------------------------------------------------------------------------%
+\begin{document}
+%--------------------------------------------------------------------------%
+\title[Your title ABBR]{Your title}
+
+\author*[1]{\fnm{Nide} \sur{Mingzi}}
+\email{exampel@mail.domain.com}
+
+\author[1]{\fnm{Zhang} \sur{San}}
+
+\author[1]{\fnm{Li} \sur{Si}}
+
+\author[2]{\fnm{Wang} \sur{Wu}}
+
+\affil*[1]{\orgdiv{School of Mathematics and Statistics},
+    \orgname{Northwestern Polytechnical University},
+    \orgaddress{\city{Xi'an} \postcode{710072}, \country{China}}}
+
+\affil[2]{\orgdiv{Another School of Mathematics and Statistics},
+    \orgname{Northwestern Polytechnical University},
+    \orgaddress{\city{Xi'an} \postcode{710072}, \country{China}}}
+
+\abstract{
+    A balabala balabala balabala \dots
+}
+
+\keywords{
+    Word, Word, Word.
+}
+%------------------------------------------------------------------------------%
+
+\maketitle
+
+%------------------------------------------------------------------------------%
+\section*{Version: \artversion, Date: \today} % comment this line for submission
+%------------------------------------------------------------------------------%
+
+
+%------------------------------------------------------------------------------%
+\section{Introduction}\label{sec:introduction}
+%------------------------------------------------------------------------------%
+Long long ago, we \dots \cite{coussy1995mechanics,shen2021peridynamic}
+%------------------------------------------------------------------------------%
+
+
+%------------------------------------------------------------------------------%
+\section{Basic knowledge}\label{sec:sec-2}
+%------------------------------------------------------------------------------%
+
+%------------------------------------------------------------------------------%
+
+
+%------------------------------------------------------------------------------%
+\section{Models}\label{sec:sec-3}
+%------------------------------------------------------------------------------%
+
+%------------------------------------------------------------------------------%
+
+
+%------------------------------------------------------------------------------%
+\section{Algorithm}\label{sec:sec-4}
+%------------------------------------------------------------------------------%
+
+%------------------------------------------------------------------------------%
+
+
+%------------------------------------------------------------------------------%
+\section{Numerical Examples}\label{sec:sec-5}
+%------------------------------------------------------------------------------%
+
+%------------------------------------------------------------------------------%
+
+
+%------------------------------------------------------------------------------%
+\section{Conclusion}\label{sec:sec-6}
+%------------------------------------------------------------------------------%
+In this paper, we have \dots
+%------------------------------------------------------------------------------%
+
+
+%------------------------------------------------------------------------------%
+\bmhead{Acknowledgements}
+
+\noindent This research was supported by the \dots
+%------------------------------------------------------------------------------%
+\begin{appendices}
+    \section{The Supplementary Material}\label{sec:app-A}
+\end{appendices}
+%------------------------------------------------------------------------------%
+% \section*{Reference}
+%------------------------------------------------------------------------------%
+\addcontentsline{toc}{section}{Reference}
+\markboth{Reference}{}
+% \bibliographystyle{sn-basic}
+\bibliography{reference}
+
+%------------------------------------------------------------------------------%
+
+\end{document}
