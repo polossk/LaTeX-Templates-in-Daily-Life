@@ -2,7 +2,7 @@
 
 *最后一次更新 2022-06-05*
 
-日常 LaTeX 文稿模板合集，提供五种最常用的文稿模板，作业类模板（assignment），普通笔记类模板（note），代码打印模板（code），日常汇报幻灯片模板（presentation）和小论文模板（paper）。小论文目前提供 Elsevier 和 Springer 两种样式。
+日常 LaTeX 文稿模板合集，提供五种最常用的文稿模板，作业类模板（assignment），普通笔记类模板（note），代码打印模板（code），日常汇报幻灯片模板（presentation）和小论文模板（paper）。小论文目前提供 Elsevier 和 Springer 两家出版社。
 
 ## 内容说明
 
@@ -16,6 +16,7 @@
 | Presentation     | beamer     | `beamer-setting.tex`     | 默认字号，支持自定义字号 |
 | Paper (Elsevier) | elsarticle | `default-el-journal.tex` | 原生命令                 |
 | Paper (Springer) | sn-jnl     | `default-sn-journal.tex` | 原生命令                 |
+| Paper (Springer) | svjour3    | `default-sv-journal.tex` | 原生命令                 |
 
 * 文档字体选用 Adobe Fonts。因为相比较于普通的自带的字体（宋体、黑体、仿宋、楷体），Adobe Fonts 更美观一些；
 * `math-symbols.sty` 集成了大多数数学公式符号及数学公式库，可以将其放在项目本地，或者存入 `%texlive%\texmf-local\tex\latex\polossk` 当中，其中 `%texlive%` 是本地 `texlive` 的安装目录；

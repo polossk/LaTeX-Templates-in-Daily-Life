@@ -1,0 +1,51 @@
+%------------------------------------------------------------------------------%
+% Springer JOMP LaTeX Setting Begin
+%------------------------------------------------------------------------------%
+\usepackage{tikz}
+\usepackage{layouts}
+\usepackage{gensymb}
+\usepackage[unicode=true,colorlinks=true,pdfborder={0 0 0}]{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{siunitx} % 物理单位
+% 在此处修改打开文件操作
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    bookmarksopen=true,     % expanded all bookmark?
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=true,      % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdfnewwindow=true,      % links in new PDF window
+}
+% \usepackage{graphicx}
+% \usepackage{wrapfig}
+% \usepackage{multirow,makecell}
+% \usepackage{longtable}
+% \usepackage{booktabs}
+% \usepackage{tabularx}
+% \usepackage{setspace}
+\usepackage[numbers,sort&compress]{natbib}
+% BibTeX users please use one of
+%\bibliographystyle{spbasic}      % basic style, author-year citations
+\bibliographystyle{spmpsci}      % mathematics and physical sciences
+%\bibliographystyle{spphys}       % APS-like style for physics
+\setcitestyle{numbers, square, sort&compress}
+\captionsetup[table]{labelfont=bf, labelsep=quad, font=small}
+\captionsetup[figure]{labelfont=bf, labelsep=quad, font=small}
+\renewcommand\arraystretch{1.1}
+\renewcommand\figureautorefname{Fig.}
+\renewcommand\tableautorefname{Table}
+\def\equationautorefname#1#2\null{Eq.#1(#2\null)}
+% \renewcommand\equationautorefname{Eq.}
+\newcommand\algorithmautorefname{Algorithm}
+\renewcommand\appendixautorefname{Appendix}
+\renewcommand\sectionautorefname{Section}
+\renewcommand{\figurename}{Fig.}
+\renewcommand{\appendixname}{}
+%------------------------------------------------------------------------------%
+% Springer EWCO LaTeX Setting End
+%------------------------------------------------------------------------------%

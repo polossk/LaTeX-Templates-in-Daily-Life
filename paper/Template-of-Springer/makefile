@@ -1,6 +1,6 @@
 TEX      = xelatex
 BIB      = bibtex
-MAIN     = article-local
+MAIN     = manuscript
 TEXARGS  = -synctex=1 -shell-escape
 
 ifeq ($(OS), Windows_NT)

@@ -47,7 +47,6 @@ clean:
 	$(RM) *.ilg *.aux *.toc *.aux
 	$(RM) *.hd *.out *.thm *.gz *.nlo *.nls
 	$(RM) *.log *.lof *.lot *.bbl *.blg
-	$(RM) *.spl
 
 wipe:
 	$(RM) $(MAIN).pdf
