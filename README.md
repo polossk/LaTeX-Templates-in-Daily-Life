@@ -17,12 +17,14 @@
 | Paper (Elsevier) | elsarticle | `default-el-journal.tex` | 原生命令                 |
 | Paper (Springer) | sn-jnl     | `default-sn-journal.tex` | 原生命令                 |
 | Paper (Springer) | svjour3    | `default-sv-journal.tex` | 原生命令                 |
+| Response Letter  | article    | -                        | 原生命令                 |
 
 * 文档字体选用 Adobe Fonts。因为相比较于普通的自带的字体（宋体、黑体、仿宋、楷体），Adobe Fonts 更美观一些；
 * `math-symbols.sty` 集成了大多数数学公式符号及数学公式库，可以将其放在项目本地，或者存入 `%texlive%\texmf-local\tex\latex\polossk` 当中，其中 `%texlive%` 是本地 `texlive` 的安装目录；
 * `nwpuname.ttf` 是学校名称特殊字体，需要额外自行安装；
 * 代码打印模板平均每页 61 行代码，且打印格式相对更清晰；
-* Paper 建议在期刊要求下自行添加格式要求，本 repo 仅提供基础格式。
+* Paper 建议在期刊要求下自行添加格式要求，本 repo 仅提供基础格式
+* Response Letter 默认使用 Times New Roman 字体，且只提供了基础的列表、超链接等基础功能（因为其他复杂功能并未用到）。
 
 ## 备注
 

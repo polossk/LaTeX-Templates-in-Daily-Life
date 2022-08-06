@@ -1,0 +1,175 @@
+\documentclass[11pt]{article}
+\usepackage{geometry}
+\geometry{a4paper,left=1.91cm,right=1.91cm,top=2.05cm,bottom=2.05cm}
+\usepackage{xcolor}
+\usepackage{layouts}
+\usepackage{gensymb}
+\usepackage[unicode=true,colorlinks=true,pdfborder={0 0 0}]{hyperref}
+\hypersetup{
+    bookmarks=false,         % show bookmarks bar?
+    bookmarksopen=false,     % expanded all bookmark?
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=true,      % window fit to Page when opened
+    pdfstartview={FitH},    % fits the width of the Page to the window
+    pdfnewwindow=true,      % links in new PDF window
+}
+\usepackage{type1cm}
+\usepackage{graphicx}
+\usepackage[font=small,labelsep=quad]{caption}
+\usepackage{wrapfig}
+\usepackage{multirow,makecell}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{setspace}
+\usepackage{enumerate}
+\usepackage{enumitem}
+
+\newcommand\defaultSog{Adobe Song Std}                  % 宋体, 用于正文
+\newcommand\defaultHei{Adobe Heiti Std}                 % 黑体, 用于标题
+\newcommand\defaultKai{Adobe Kaiti Std}                 % 楷体, 一般用于强调
+\newcommand\defaultFag{Adobe FangSong Std}              % 仿宋, 一般用于强调
+\newcommand\defaultEngFont{Times New Roman}             % 英文文本默认字体
+\newcommand\codeFont{Consolas}                          % 等宽英文默认字体
+\usepackage{fontspec}                                   % 设置字体
+\usepackage[SlantFont, BoldFont, CJKchecksingle]{xeCJK} % 设置中文字体
+\defaultfontfeatures{Mapping=tex-text}                      % 启用 TeX Ligatures
+\setCJKmainfont[ItalicFont=\defaultKai, BoldFont=\defaultHei]{\defaultSog}
+\setCJKsansfont[ItalicFont=\defaultKai, BoldFont=\defaultHei]{\defaultSog}
+\setCJKfamilyfont{song}{\defaultSog}                        % 设置 CJK 字体族
+\setCJKfamilyfont{hei}{\defaultHei}                         %
+\setCJKfamilyfont{kai}{\defaultKai}                         %
+\setCJKfamilyfont{fang}{\defaultFag}                        %
+\setCJKfamilyfont{eng}{\defaultEngFont}                     %
+\setmonofont{\codeFont}                                     %
+\setmainfont{\defaultEngFont}                               %
+\newcommand{\fSong}{\CJKfamily{song}}                       % 宋体: fSong
+\newcommand{\fHei}{\CJKfamily{hei}}                         % 黑体: fHei
+\newcommand{\fKai}{\CJKfamily{kai}}                         % 楷体: fKai
+\newcommand{\fFang}{\CJKfamily{fang}}                       % 仿宋: fFang
+\newcommand{\fEng}{\CJKfamily{eng}}                         % 英文: fEng
+\XeTeXlinebreaklocale "zh"                                  % 使用中文的换行风格
+\XeTeXlinebreakskip = 0pt plus 1pt                          % 换行逻辑的弹性大小
+\def\equationautorefname#1#2\null{#1(#2\null)}
+
+%------------------------------------------------------------------------------%
+\usepackage{math-symbols}                                   % Math Symbols
+%------------------------------------------------------------------------------%
+\usepackage{cases}
+% diff operator
+\newcommand\dx{{\diff x}}
+\newcommand\dxp{{\diff x'}}
+\newcommand\dVmvx{{\diff V_{\mvx}}}
+\newcommand\dVmvxp{{\diff V_{\mvx'}}}
+% trivial PD
+\newcommand\horizondeltax{{\mathcal H_{\delta}(x)}}
+\newcommand\horizondeltaxp{{\mathcal H_{\delta}(x')}}
+\newcommand\horizondeltamvx{{\mathcal H_{\delta}(\mvx)}}
+\newcommand\horizondeltamvxp{{\mathcal H_{\delta}(\mvx')}}
+% Dual-horizon PD
+\newcommand\horizonx{{\mathcal H_{x}}}
+\newcommand\horizonmvx{{\mathcal H_{\mvx}}}
+\newcommand\horizonmvxp{{\mathcal H_{\mvx'}}}
+\newcommand\Dualhorizonx{{\mathcal H'_{x}}}
+\newcommand\Dualhorizonmvx{{\mathcal H'_{\mvx}}}
+\newcommand\Dualhorizonmvxp{{\mathcal H'_{\mvx'}}}
+% boundary
+\newcommand\Bdelta{{\mathrm B_\delta}}
+\newcommand\Idelta{{\mathrm I_\delta}}
+% more readable
+\newcommand\Hdeltax{\horizondeltax}
+\newcommand\Hdeltaxp{\horizondeltaxp}
+\newcommand\Hdeltamvx{\horizondeltamvx}
+\newcommand\Hdeltamvxp{\horizondeltamvxp}
+\newcommand\Hx{\horizonx}
+\newcommand\Hmvx{\horizonmvx}
+\newcommand\Hmvxp{\horizonmvxp}
+\newcommand\DHx{\Dualhorizonx}
+\newcommand\DHmvx{\Dualhorizonmvx}
+\newcommand\DHmvxp{\Dualhorizonmvxp}
+
+\renewcommand{\baselinestretch}{1.25}
+
+\begin{document}
+
+\vspace{1.5cm}
+\begin{minipage}[t]{\textwidth}
+      \centering
+      \begin{minipage}[t]{0.8\textwidth}
+            \begin{center}
+                  {\bf \Large Authors' response to reviewers' comments} \\
+                  Title: Zheli Shi Wenzhang Timu \\
+                  Manuscript Number: ABCD-E-22-0XXXX, Journal: JOURNAL NAME \\
+                  Author: Zhang San, Tongxun Zuozhe\textsuperscript{*}, Li Si, Wang Wu \\
+                  *Corresponding author. \\
+                  Email address: abc@efg.edu.cn (Tongxun Zuozhe) \\
+            \end{center}
+      \end{minipage}
+\end{minipage}
+
+\vspace{1.5cm}
+
+
+\renewcommand{\baselinestretch}{1.0}
+
+We genuinely appreciate all the constructive comments on the previous draft from reviewers and editors. We have carefully considered all the comments in preparing our revision. Besides, we have carefully proofread the whole original manuscript and made extensive and meticulous modifications to minimize potential errors. The followings are our point-to-point responses to reviewers' comments.
+
+      {\bf The revised portions have been marked in red in the revised manuscript.}
+
+\vspace{0.5cm}
+\begin{center}
+      {\bf \large Response to First Reviewer's Comments}
+\end{center}
+
+
+\begin{enumerate}
+      \item {\bf Reviewer's comment}: { Q1 balabala.}
+
+            \noindent{\bf Response:\quad} Thanks for your thorough review. Balabala.
+
+
+      \item {\bf Reviewer's comment}: { Q2 balabala.}
+
+            \noindent{\bf Response:\quad} Thanks for your thorough review. Balabala.
+
+
+\end{enumerate}
+
+\subsection*{References}
+\begin{enumerate}[label={[\arabic*]}]
+      \item Silling SA, Askari E (2005) A meshfree method based on the peridynamic model of solid mechanics. Comput Struct 83(17-18):1526-1535 \url{https://doi.org/10.1016/j.compstruc.2004.11.026}
+      \item Ren H, Zhuang X, Cai Y, et al (2016) Dual-horizon peridynamics. Int J Numer Meth Eng 108(12):1451-1476 \url{https://doi.org/10.1002/nme.5257}
+      \item Ren H, Zhuang X, Rabczuk T (2017) Dual-horizon peridynamics: A stable solution to varying horizons. Comput Method Appl Mech Eng 318:762-782 \url{https://doi.org/10.1016/j.cma.2016.12.031}
+      \item Ren H, Zhuang X, Oterkus E (2021) Nonlocal strong forms of thin plate, gradient elasticity, magneto-electro-elasticity and phase-field fracture by nonlocal operator method. Eng Comput pp 1-22 \url{https://doi.org/10.1007/s00366-021-01502-8}
+\end{enumerate}
+
+\clearpage
+\vspace{0.5cm}
+\begin{center}
+      {\bf \large Response to Second Reviewer's Comments}
+\end{center}
+
+\begin{enumerate}
+      \item {\bf Reviewer's comment}: { Q1 balabala.}
+
+            \noindent{\bf Response:\quad} Thanks for your thorough review. Balabala.
+
+
+      \item {\bf Reviewer's comment}: { Q2 balabala.}
+
+            \noindent{\bf Response:\quad} Thanks for your thorough review. Balabala.
+
+
+\end{enumerate}
+
+\subsection*{References}
+\begin{enumerate}[label={[\arabic*]}]
+      \item Shen F, Yu Y, Zhang Q, et al (2020) Hybrid model of peridynamics and finite element method for static elastic deformation and brittle fracture analysis. Eng Anal Bound Elem 113:17–25 \url{https://doi.org/10.1016/j.enganabound.2019.12.016}
+      \item Zhang Q, Gu X, Huang D (2015) Failure analysis of plate with nonuniform arrangement holes by ordinary state-based peridynamics. In: Proceedings of the International Conference on Computational Methods, 2, pp 1–10 \url{https://doi.org/10.13140/RG.2.1.4217.9923}
+      \item Shen S, Yang Z, Han F, et al (2021) Peridynamic modeling with energy-based surface correction for fracture simulation of random porous materials. Theor Appl Fract Mech 114:102987 \url{https://doi.org/10.1016/j.tafmec.2021.102987}
+\end{enumerate}
+
+
+
+\end{document}
